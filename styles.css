@@ -24,8 +24,12 @@ body {
 .head-container>div>img {
     cursor: pointer;
     margin-left: 3px;
+    opacity: 0.6;
 }
 
+.head-container>div>img:hover {
+    opacity: 1;
+}
 
 a:link {
     color: #404040;
