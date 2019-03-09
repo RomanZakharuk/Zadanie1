@@ -21,13 +21,17 @@ body {
     text-align: center;
 }
 
-.head-container>div>img {
+.head-container>div>i {
     cursor: pointer;
     margin-left: 3px;
     opacity: 0.6;
 }
 
-.head-container>div>img:hover {
+.fa-user-circle {
+    color: #4285F4;
+}
+
+.head-container>div>i:hover {
     opacity: 1;
 }
 
@@ -67,15 +71,14 @@ a:active {
     padding: 5px 8px 0 16px;
     height: 39px;
     width: 584px;
-    
     border: solid 1px #dfe1e5;
     border-radius: 24px;
 }
 
- .input-container:hover {
+.input-container:hover {
     box-shadow: 0 0 4px 2px rgba(223, 225, 229, 0.6);
     border: solid 1px #dfe1e5;
- }
+}
 
 .input-search {
     display: flex;
@@ -94,6 +97,27 @@ a:active {
     -webkit-tap-highlight-color: transparent;
 }
 
+.search {
+    line-height: 44px;
+    display: flex;
+    flex: 1 0 auto;
+    align-items: center;
+    border: 0;
+    background: transparent;
+    outline: none;
+    width: 24px;
+    margin-top: -5px;
+}
+
+.search>i {
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.fa-search {
+    color: #4285F4;
+}
+
 .keyboard {
     line-height: 44px;
     display: flex;
@@ -107,11 +131,48 @@ a:active {
     margin-top: -5px;
 }
 
-.keyboard>img {
-    height: 22px;
-    width: 20px;
+.keyboard>i {
     vertical-align: middle;
     cursor: pointer;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {    
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 200%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 13px;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #555 transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }
 
 .mic {
@@ -127,20 +188,25 @@ a:active {
     margin-top: -5px;
 }
 
-.mic>img {
-    height: 20px;
-    width: 14px;
+.mic>i {
     vertical-align: middle;
     cursor: pointer;
 }
 
+.fa-microphone {
+    color: #4285F4;
+}
+
+
+
 .button-container {
+    display: flex;
     margin-top: 18px;
 }
 
-.button-container>input {
-    height: 36px;
-    line-height: 27px;
+.button {
+    height: 32px;
+    line-height: 32px;
     border: 1px solid #c6c6c6;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     background-color: #f2f2f2;
@@ -150,44 +216,75 @@ a:active {
     cursor: pointer;
     font-family: arial, sans-serif;
     font-size: 14px;
-    margin: 11px 4px;
+    margin: 11px 6px;
     min-width: 54px;
     padding: 0 16px;
     text-align: center;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
 }
 
-.button-container>input:hover {
+.button:hover {
     background-color: #f5f5f5;
     border: 1px solid #c6c6c6;
     color: #222;
+    opacity: 0.9;
+}
+
+.ripple {
+    display: block;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.3s linear;
+}
+
+@keyframes ripple {
+    to {
+        opacity: 0;
+        transform: scale(2.5);
+    }
 }
 
 footer {
     display: block;
     visibility: visible;
     justify-content: center;
-    background-color: #f2f2f2; 
+    background-color: #f2f2f2;
     margin-top: 110px;
     font-family: arial, sans-serif;
-    text-align: left;
+    flex: 0 0 auto;
 }
 
 footer>div {
     display: flex;
-    flex-direction: row;    
+    flex-direction: row;
     line-height: 40px;
     visibility: visible;
-    border-top: 1px solid #e4e4e4;   
+    border-top: 1px solid #e4e4e4;
 }
 
 footer>div>span {
     font-size: 15px;
     padding-left: 27px;
-    color: rgba(0,0,0,.54);
+    color: rgba(0, 0, 0, .54);
 }
 
-footer>div>a {
+.second-row>div {
+    width: 100%;
     font-size: 13px;
-    text-align: left;
+}
+
+.right-menu {
+    text-align: right;
+}
+
+.left-menu>a {
     padding-left: 27px;
+}
+
+.right-menu>a {
+    padding-right: 27px;
 }
