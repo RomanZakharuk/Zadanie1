@@ -5,12 +5,21 @@
     <meta charset="utf-8" />
     <title>MyGoogle</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="ripple.js">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 </head>
 
 <body>
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="animals.js"></script>
+    <script src="autocompleter.js"></script>
+    <script src="words.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
     <div class="head-container">
         <div><a href="https://mail.google.com/mail/u/0/">Gmail</a></div>
         <div><a href="https://www.google.pl/imghp?hl=en&tab=wi&authuser=0/">Images</a></div>
@@ -27,17 +36,20 @@
         <div class="input-container">
             <form action="https://google.com" method="get"></form>
             <div class="search">
-                    <i class="fas fa-search fa-lg"></i>               
-                </div>
+                <i class="fas fa-search fa-lg"></i>
+            </div>
             <input class="input-search" maxlength="2048" name="Search" type="text" aria-autocomplete="both"
                 aria-haspopup="false" autocapitalize="off" autocomplete="off" autocorrect="off" role="combobox"
-                spellcheck="false" title="Search" value="" aria-label="Search">
+                spellcheck="false" title="Search" value="" aria-label="Search" v-model="inputContent">
+
+           
             </form>
+            
 
             <div class="keyboard">
                 <i class="fas fa-keyboard fa-lg tooltip">
                     <span class="tooltiptext">Virtual keyboard</span>
-                </i>                
+                </i>
             </div>
 
             <div class="mic">
@@ -46,14 +58,27 @@
                     <span class="tooltiptext">Search by voice</span>
                 </i>
             </div>
+        
         </div>
+        
+        
+        <v-autocompleter v-bind:input="inputContent" v-if="inputContent"></v-autocompleter>
+
 
         <div class="button-container">
-            <div class="button enable-ripple">Google Search</div>
-            <div class="button enable-ripple">I'm Feeling Lucky</div>
+            <button class="mdc-button mdc-button--raised mdc-ripple-surface stbtn animat" v-if="!inputContent">Google Search</button>
+            <button class="mdc-button mdc-button--raised mdc-ripple-surface stbtn animat" v-if="!inputContent">I'm Feeling Lucky</button>
         </div>
+        <script>
+            const elements = document.querySelectorAll('.animat');
+            for (const element of elements) {
+                mdc.ripple.MDCRipple.attachTo(element);
+            }
+        </script>
+
+        <script src="animals.js"></script>
+        <script src="autocompleter.js"></script>
     </div>
-    <script type="text/javascript" src="ripple.js"></script>
 
     <footer>
         <div>
