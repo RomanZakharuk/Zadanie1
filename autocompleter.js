@@ -1,10 +1,10 @@
 Vue.component('v-autocompleter', {
     props: ["input"],
-    computed : {
+    computed: {
         results: function () {
-            let pattern = new RegExp('^'+this.input, 'i');
-            let results = window.animals.filter( function (word) {
-                 return pattern.test(word);    
+            let pattern = new RegExp('^' + this.input, 'i');
+            let results = window.words.filter(function (word) {
+                return pattern.test(word);
             });
 
             return results.length > 9 ? results.slice(0, 10) : results;
@@ -12,19 +12,19 @@ Vue.component('v-autocompleter', {
     },
     template:
         `<div class="autocompleter">
-          <table class ="autocomplete-results">
-             <tr class="autocomplete-result"
-                   v-for="(result, i) in results" :key="i">{{ result }}</tr>
-          </table>
-        </div>`
+    <table class ="autocomplete-results">
+       <tr class="autocomplete-result"
+             v-for="(result, i) in results" :key="i">{{ result }}</tr>
+    </table>
+  </div>`
 })
 
-    new Vue({
-        el: ".main-container",
-        data: function () {
-            return {
-                inputContent: "",
-                showAutocompleter: this.inputContent ? true : false
-            }
+new Vue({
+    el: ".maincontainer",
+    data: function () {
+        return {
+            inputContent: "",
+            showAutocompleter: this.inputContent ? true : false
         }
-    })
+    }
+})

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>MyGoogle</title>
+    <link rel="stylesheet" href="styles2.css" />
+
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="animals.js"></script>
+    <script src="autocompleter.js"></script>
+    <script src="words.js"></script>
+    <script src="changeClass.js"></script>
+
+
+    <div class="maincontainer">
+        <div class="head-container-l">
+            <div class="img-container">
+                <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
+                    alt="Google" height="30" width="92" data-atf="1">
+            </div>
+
+            <div id="changeClass" :class="isActive ? 'new-input-container' : 'input-container'">
+                <form action="https://google.com" method="get"></form>
+
+                <input v-on:focus="isActive = !isActive" class="input-search" name="Search" type="text" title="Search"
+                    value="" v-model="inputContent">
+                </form>
+
+                <div class="keyboard">
+                    <i class="fas fa-keyboard fa-lg tooltip">
+                        <span class="tooltiptext">Virtual keyboard</span>
+                    </i>
+                </div>
+
+                <div class="mic">
+                    <!-- <img src="google-mic.png"> -->
+                    <i class="fas fa-microphone fa-lg tooltip">
+                        <span class="tooltiptext">Search by voice</span>
+                    </i>
+                </div>
+
+                <div class="search">
+                    <i class="fas fa-search fa-lg"></i>
+                </div>
+            </div>
+
+            <v-autocompleter v-bind:input="inputContent" v-if="inputContent"></v-autocompleter>
+
+
+        </div>
+
+        <div class="head-container-r">
+            <div><a href="https://mail.google.com/mail/u/0/">Gmail</a></div>
+            <div><a href="https://www.google.pl/imghp?hl=en&tab=wi&authuser=0/">Images</a></div>
+            <div><i class="fas fa-th fa-lg"></i></div>
+            <div><i class="fas fa-bell fa-lg"></i></div>
+            <div><i class="fas fa-user-circle fa-3x"></i></div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div>
+            <span>Poland</span>
+        </div>
+        <div class="second-row">
+            <div class="left-menu">
+                <a href="">Advertising</a>
+                <a href="">Business</a>
+                <a href="">About</a>
+            </div>
+            <div class="right-menu">
+                <a href="">Privacy</a>
+                <a href="">Terms</a>
+                <a href="">Settings</a>
+            </div>
+        </div>
+    </footer>
+    <script src="animals.js"></script>
+    <script src="autocompleter.js"></script>
+</body>
+
+</html>

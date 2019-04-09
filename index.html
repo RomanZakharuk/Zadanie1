@@ -5,20 +5,21 @@
     <meta charset="utf-8" />
     <title>MyGoogle</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="ripple.js">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+ 
 </head>
 
 <body>
+    <script src="changeClass.js"></script>
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <script src="animals.js"></script>
-    <script src="autocompleter.js"></script>
+    
     <script src="words.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+   
 
     <div class="head-container">
         <div><a href="https://mail.google.com/mail/u/0/">Gmail</a></div>
@@ -28,24 +29,22 @@
         <div><i class="fas fa-user-circle fa-3x"></i></div>
     </div>
 
-    <div class="main-container">
+    <div class="maincontainer">
         <div class="img-container">
             <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="">
         </div>
 
-        <div class="input-container">
+        <div id="changeClass" :class="isActive ? 'new-input-container' : 'input-container'">
             <form action="https://google.com" method="get"></form>
             <div class="search">
                 <i class="fas fa-search fa-lg"></i>
             </div>
-            <input class="input-search" maxlength="2048" name="Search" type="text" aria-autocomplete="both"
+            
+            <input v-on:focus="isActive = !isActive" class="input-search" maxlength="2048" name="Search" type="text" aria-autocomplete="both"
                 aria-haspopup="false" autocapitalize="off" autocomplete="off" autocorrect="off" role="combobox"
                 spellcheck="false" title="Search" value="" aria-label="Search" v-model="inputContent">
-
-           
             </form>
             
-
             <div class="keyboard">
                 <i class="fas fa-keyboard fa-lg tooltip">
                     <span class="tooltiptext">Virtual keyboard</span>
@@ -57,27 +56,17 @@
                 <i class="fas fa-microphone fa-lg tooltip">
                     <span class="tooltiptext">Search by voice</span>
                 </i>
-            </div>
-        
+            </div>        
         </div>
         
-        
-        <v-autocompleter v-bind:input="inputContent" v-if="inputContent"></v-autocompleter>
+        <v-autocompleter v-bind:input="inputContent" v-if="inputContent "></v-autocompleter>
 
 
         <div class="button-container">
-            <button class="mdc-button mdc-button--raised mdc-ripple-surface stbtn animat" v-if="!inputContent">Google Search</button>
-            <button class="mdc-button mdc-button--raised mdc-ripple-surface stbtn animat" v-if="!inputContent">I'm Feeling Lucky</button>
+            <button class="mdc-ripple-surface stbtn animat" v-if="!inputContent" onclick="location.href='searchPage.html'">Google Search</button>
+            <button class="mdc-ripple-surface stbtn animat" v-if="!inputContent">I'm Feeling Lucky</button>
         </div>
-        <script>
-            const elements = document.querySelectorAll('.animat');
-            for (const element of elements) {
-                mdc.ripple.MDCRipple.attachTo(element);
-            }
-        </script>
-
-        <script src="animals.js"></script>
-        <script src="autocompleter.js"></script>
+        
     </div>
 
     <footer>
@@ -97,7 +86,15 @@
             </div>
         </div>
     </footer>
+    <script>
+            const elements = document.querySelectorAll('.animat');
+            for (const element of elements) {
+                mdc.ripple.MDCRipple.attachTo(element);
+            }
+        </script>
 
+        
+        <script src="autocompleter.js"></script> 
 </body>
 
 </html>

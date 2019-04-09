@@ -1,5 +1,10 @@
 var elements = document.querySelectorAll('.enable-ripple');
 
+mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
+$(function() {
+    $.material.init();
+});
+
 Array.prototype.forEach.call(elements, function(button){
     button.addEventListener('click', ripple); 
 });
