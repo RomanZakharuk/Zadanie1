@@ -15,8 +15,7 @@
 <body>
     <script src="changeClass.js"></script>
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-    <script src="animals.js"></script>
-    
+    <script src="animals.js"></script>    
     <script src="words.js"></script>
     
    
@@ -56,11 +55,10 @@
                 <i class="fas fa-microphone fa-lg tooltip">
                     <span class="tooltiptext">Search by voice</span>
                 </i>
-            </div>        
+            </div> 
+            
+            <v-autocompleter v-bind:input="inputContent" v-if="inputContent"></v-autocompleter>
         </div>
-        
-        <v-autocompleter v-bind:input="inputContent" v-if="inputContent "></v-autocompleter>
-
 
         <div class="button-container">
             <button class="mdc-ripple-surface stbtn animat" v-if="!inputContent" onclick="location.href='searchPage.html'">Google Search</button>

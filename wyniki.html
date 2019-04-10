@@ -4,8 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>MyGoogle</title>
-    <link rel="stylesheet" href="styles2.css" />
-
+    <link rel="stylesheet" href="styles.css" />
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -13,17 +12,15 @@
 </head>
 
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-    <script src="animals.js"></script>
-    <script src="autocompleter.js"></script>
-    <script src="words.js"></script>
     <script src="changeClass.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="animals.js"></script>
+    <script src="words.js"></script>
 
 
-    <div class="maincontainer">
+    <div class="maincontainer wmaincontainer">
         <div class="head-container-l">
-            <div class="img-container">
+            <div class="wimg-container">
                 <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
                     alt="Google" height="30" width="92" data-atf="1">
             </div>
@@ -51,10 +48,9 @@
                 <div class="search">
                     <i class="fas fa-search fa-lg"></i>
                 </div>
+
+                <v-autocompleter v-bind:input="inputContent" v-if="inputContent"></v-autocompleter>
             </div>
-
-            <v-autocompleter v-bind:input="inputContent" v-if="inputContent"></v-autocompleter>
-
 
         </div>
 
@@ -85,7 +81,7 @@
             </div>
         </div>
     </footer>
-    <script src="animals.js"></script>
+
     <script src="autocompleter.js"></script>
 </body>
 
