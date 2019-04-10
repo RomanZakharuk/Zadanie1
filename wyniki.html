@@ -18,7 +18,7 @@
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
     <script src="animals.js"></script>
     <script src="words.js"></script>
-    <script src="routes.js"></script>
+    
 
 
     <div class="maincontainer wmaincontainer">
@@ -68,20 +68,35 @@
     <div id="app">
         <div class="navigation-container">
             <div class="navigation-bar">
-                <div class="menu-tab"><a href="#/Wszystko"
-                        class="router-link-exact-active router-link-active">Wszystko</a></div>
-                <div class="menu-tab"><a href="#/Grafika" class="">Grafika</a></div>
-                <div class="menu-tab"><a href="#/Filmy" class="">Filmy</a></div>
-                <div class="menu-tab"><a href="#/Zakupy" class="">Zakupy</a></div>
-                <div class="menu-tab"><a href="#/Wiadomości" class="">Wiadomości</a></div>
-                <div class="menu-tab"><a href="#/Więcej" class="">Więcej</a></div>
-                <div class="menu-tab"><a href="#/Ustawienia" class="">Ustawienia</a></div>
-                <div class="menu-tab"><a href="#/Narzędzia" class="">Narzędzia</a></div>
+                <div class="menu-tab">
+                    <router-link tag="div" to="/Wszystko"><a>Wszystko</a></router-link>
+                </div>
+                <div class="menu-tab">
+                    <router-link tag="div" to="/Grafika"><a>Grafika</a></router-link>
+                </div>
+                <div class="menu-tab">
+                    <router-link tag="div" to="/Filmy"><a>Filmy</a></router-link>
+                </div>
+                <div class="menu-tab">
+                    <router-link tag="div" to="/Zakupy"><a>Zakupy</a></router-link>
+                </div>
+                <div class="menu-tab">
+                    <router-link tag="div" to="/Wiadomości"><a>Wiadomości</a></router-link>
+                </div>
+                <div class="menu-tab">
+                    <router-link tag="div" to="/Więcej"><a>Więcej</a></router-link>
+                </div>
+                <div class="menu-tab">
+                    <router-link tag="div" to="/Ustawienia"><a>Ustawienia</a></router-link>
+                </div>
+                <div class="menu-tab">
+                    <router-link tag="div" to="/Narzędzia"><a>Narzędzia</a></router-link>
+                </div>
             </div>
         </div>
+
         <div class="resultStats">Około 180 000 000 wyników (0,34 s)</div>
         <router-view></router-view>
-
     </div>
 
     <footer>
@@ -102,6 +117,8 @@
         </div>
     </footer>
 
+    
+    <script src="routes.js"></script>
     <script src="autocompleter.js"></script>
 </body>
 

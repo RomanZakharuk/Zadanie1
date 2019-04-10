@@ -1,13 +1,12 @@
 const Wszystko = {
     template:
-        `<div class="result">
+        `<div><div class="result">
         <div class="sitelink"><a href="#">Lorem Ipsum - All the facts - Lipsum generator</a></div>
         <div class="urladress"><a href="#">https://pl.lipsum.com/</a></div>
         <div class="description">
             Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.
         </div>
     </div>
-
     <div class="result">
         <div class="sitelink"><a href="#">Lorem ipsum – Wikipedia, wolna encyklopedia</a></div>
         <div class="urladress"><a href="#">https://pl.wikipedia.org/wiki/Lorem_ipsum Wikipedia</a></div>
@@ -16,7 +15,6 @@ const Wszystko = {
             łacinie, wzorowany na fragmencie traktatu Cycerona ...
         </div>
     </div>
-
     <div class="result">
         <div class="sitelink"><a href="#">Lorem Ipsum – Generator, Origins and Meaning</a></div>
         <div class="urladress"><a href="#">https://loremipsum.io/ Richard McClintock.</a></div>
@@ -25,7 +23,6 @@ const Wszystko = {
             for your favorite writing, design and blogging tools.
         </div>
     </div>
-
     <div class="result">
         <div class="sitelink"><a href="#">Wypełniacz Tekstu - Lorem Ipsum - by How2HTML</a></div>
         <div class="urladress"><a href="#">how2html.pl/lorem-ipsum/ </a></div>
@@ -33,7 +30,7 @@ const Wszystko = {
             Lorem Ipsum – wypełniacz tekstu. Pewnie zastanawiacie się jak używać nagłówków oraz paragrafów przy większej
             ilości tekstu. W takim razie podajmy jakiś ...
         </div>
-    </div>` }
+    </div></div>` }
 const Grafika = { template: '<div class="result">Hello Grafika</div>' }
 const Filmy = { template: '<div class="result">Hello Filmy</div>' }
 const Zakupy = { template: '<div class="result">Hello Zakupy</div>' }

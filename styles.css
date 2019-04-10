@@ -412,30 +412,23 @@ footer>div>span {
 }
 
 .menu-tab {
-    height: 26px;
+    height: 44px;
     width: 100%;
     text-align: center;
-    line-height: 15px;
-    margin-top: 24px;
+    line-height: 45px;
+    margin-top: 4px;
 }
 
 .menu-tab a {
     text-decoration: none;
 }
 
-.menu-tab:active {
-    border-bottom: 3px solid #1A73E8;
+.menu-tab a:focus {
+    text-decoration: none;
     color: #1A73E8;
-    font-weight: bold;
 }
 
-.menu-tab-active {
-    border-bottom: 3px solid #1A73E8;
-    color: #1A73E8;
-    font-weight: bold;
-}
-
-.router-link-active {
+.router-link-active{
     border-bottom: 3px solid #1A73E8;
     color: #1A73E8;
     font-weight: bold;
@@ -446,7 +439,7 @@ footer>div>span {
     font-size: 13px;
     line-height: 23px;
     color: #777;
-    margin-top: 14px;
+    margin-top: 10px;
     margin-left: 164px;
 }
 
