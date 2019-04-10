@@ -14,8 +14,11 @@
 <body>
     <script src="changeClass.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
     <script src="animals.js"></script>
     <script src="words.js"></script>
+    <script src="routes.js"></script>
 
 
     <div class="maincontainer wmaincontainer">
@@ -51,7 +54,6 @@
 
                 <v-autocompleter v-bind:input="inputContent" v-if="inputContent"></v-autocompleter>
             </div>
-
         </div>
 
         <div class="head-container-r">
@@ -61,6 +63,24 @@
             <div><i class="fas fa-bell fa-lg"></i></div>
             <div><i class="fas fa-user-circle fa-3x"></i></div>
         </div>
+    </div>
+
+    <div id="app">
+        <div class="navigation-container">
+            <div class="navigation-bar">
+                <div class="menu-tab"><a href="#/Wszystko"
+                        class="router-link-exact-active router-link-active">Wszystko</a></div>
+                <div class="menu-tab"><a href="#/Grafika" class="">Grafika</a></div>
+                <div class="menu-tab"><a href="#/Filmy" class="">Filmy</a></div>
+                <div class="menu-tab"><a href="#/Zakupy" class="">Zakupy</a></div>
+                <div class="menu-tab"><a href="#/Wiadomości" class="">Wiadomości</a></div>
+                <div class="menu-tab"><a href="#/Więcej" class="">Więcej</a></div>
+                <div class="menu-tab"><a href="#/Ustawienia" class="">Ustawienia</a></div>
+                <div class="menu-tab"><a href="#/Narzędzia" class="">Narzędzia</a></div>
+            </div>
+        </div>
+        <div class="resultStats">Około 180 000 000 wyników (0,34 s)</div>
+        <router-view></router-view>
 
     </div>
 
